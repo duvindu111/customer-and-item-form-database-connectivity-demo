@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 public class ItemFormController {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/customerAndItem";
+    private static final String URL = "jdbc:mysql://localhost:3306/customerAndItem ? useSSL=false";
     private static final Properties props = new Properties();
 
     static{
@@ -66,7 +66,7 @@ public class ItemFormController {
             int affectedRows = pstm.executeUpdate();
 
             if(affectedRows>0){
-                new Alert(Alert.AlertType.CONFIRMATION, "Customer Deleted Successfully!");
+                new Alert(Alert.AlertType.CONFIRMATION, "Customer Deleted Successfully!").show();
             }
 
             itemId.setText("");
@@ -96,7 +96,7 @@ public class ItemFormController {
             int affectedRows= pstm.executeUpdate();
 
             if(affectedRows>0){
-                new Alert(Alert.AlertType.CONFIRMATION, "ITEM ADDED SUCCESSFULLY!");
+                new Alert(Alert.AlertType.CONFIRMATION, "ITEM ADDED SUCCESSFULLY!").show();
             }
 
             itemId.setText("");
@@ -126,7 +126,7 @@ public class ItemFormController {
             int affectedRows= pstm.executeUpdate();
 
             if(affectedRows>0){
-                System.out.println("Customer Details Updated Successfully!");
+                new Alert(Alert.AlertType.CONFIRMATION, "ITEM UPDATED SUCCESSFULLY!").show();
             }
 
             itemId.setText("");
